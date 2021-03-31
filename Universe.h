@@ -2,18 +2,24 @@
 #include "Particles.h"
 #include <random>
 
-class Universe {
+class Universe
+{
 public:
   Universe(size_t num_types, size_t num_particles, int width, int height);
 
-  void ReSeed(float attract_mean, float attract_std, float minr_lower, float minr_upper,
-    float maxr_lower, float maxr_upper, float friction, bool flat_force);
+  void ReSeed(float attract_mean, float attract_std, float minr_lower, float minr_upper, float maxr_lower, float maxr_upper, float friction, bool flat_force);
 
   void SetPopulation(size_t num_types, size_t num_particles);
-  void SetSize(float width, float height) { m_width = width; m_height = height; }
+  void SetSize(float width, float height)
+  {
+      m_width = width; m_height = height;
+  }
   void SetRandomTypes();
   void SetRandomParticles();
-  void ToggleWrap() { m_wrap = !m_wrap; }
+  void ToggleWrap()
+  {
+      m_wrap = !m_wrap;
+  }
 
   void Step();
   void Draw(sf::RenderWindow& window, float opacity) const;
